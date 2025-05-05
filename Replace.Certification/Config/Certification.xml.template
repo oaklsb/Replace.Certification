@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<CertificationConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- CERTIFICATION DATABASE -->
+  <CertificationConnectionString>Data Source=${CERTIFICATION_DATABASE_HOST},${CERTIFICATION_DATABASE_PORT};TrustServerCertificate=true;Initial Catalog=${CERTIFICATION_DATABASE_NAME};User ID=${CERTIFICATION_DATABASE_USER};Password=${CERTIFICATION_DATABASE_PASSWORD}</CertificationConnectionString>
+
+  <Billing IP="${BILLING_IP}" Port="${BILLING_PORT}">
+    <!-- Thanks to florian0 for his MiniBillingServer (https://github.com/florian0/MiniBillingServer) -->
+    <!-- ACCOUNT DATABASE -->
+    <ConnectionString>Data Source=${ACCOUNT_DATABASE_HOST},${ACCOUNT_DATABASE_PORT};TrustServerCertificate=true;Initial Catalog=${ACCOUNT_DATABASE_NAME};User ID=${ACCOUNT_DATABASE_USER};Password=${ACCOUNT_DATABASE_PASSWORD}</ConnectionString>
+
+    <WhitelistHosts>
+      <string>${WHITELIST_HOST}</string>
+    </WhitelistHosts>
+    <WhitelistIPs>
+      <string>${WHITELIST_IP}</string>
+    </WhitelistIPs>
+  </Billing>
+</CertificationConfig>

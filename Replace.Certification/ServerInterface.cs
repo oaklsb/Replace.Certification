@@ -6,6 +6,7 @@ using Replace.Common.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace Replace.Certification
 {
@@ -174,7 +175,7 @@ namespace Replace.Certification
 
                 //Get assigned machine and skip if IPs do not match.
                 var machine = cert.ServerMachineList.Single(p => p.ID == body.MachineID);
-                if (machine.GetIP(cord.BindType) != IP)
+                if (!IPAddress.Parse(machine.GetIP(cord.BindType)).Equals(IPAddress.Parse(IP)))
                     continue;
 
                 //We found the correct body!

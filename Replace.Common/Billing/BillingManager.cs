@@ -1,10 +1,10 @@
-﻿using NLog;
+﻿using Microsoft.Data.SqlClient;
+using NLog;
 using Replace.Common.Billing.Handlers;
 using Replace.Common.Billing.Http;
 using Replace.Common.Billing.Model;
 using Replace.Common.Database;
 using System;
-using System.Data.SqlClient;
 using System.Text;
 
 namespace Replace.Common.Billing

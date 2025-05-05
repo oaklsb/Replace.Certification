@@ -22,8 +22,6 @@ namespace Replace.Certification
 
         private static void Main(string[] args)
         {
-            Helper.SetupConsole(120, Console.BufferHeight);
-
             var configFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, "Config", ModuleName + ".xml"));
 
             using (var stream = configFile.OpenRead())
@@ -52,18 +50,8 @@ namespace Replace.Certification
 
             Logger.Info($"Certification server started on {certificationManager.CertificationMachine.PrivateIP}:{certificationManager.CertificationBody.BindPort}");
 
-            Logger.Info("Press ESC to exit...");
-
             while (true)
             {
-                if (Console.KeyAvailable)
-                {
-                    var keyInfo = Console.ReadKey(true);
-
-                    if (keyInfo.Key == ConsoleKey.Escape)
-                        break;
-                }
-
                 network.Tick();
                 Thread.Sleep(1);
             }

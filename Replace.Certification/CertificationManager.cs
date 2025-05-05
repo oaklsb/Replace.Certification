@@ -1,11 +1,11 @@
-﻿using NLog;
+﻿using Microsoft.Data.SqlClient;
+using NLog;
 using Replace.Certification.Config;
 using Replace.Common;
 using Replace.Common.Certification;
 using Replace.Common.Database;
 using Replace.Common.Security;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace Replace.Certification

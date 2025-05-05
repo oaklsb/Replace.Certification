@@ -1,6 +1,6 @@
-﻿using NLog;
+﻿using Microsoft.Data.SqlClient;
+using NLog;
 using System;
-using System.Data.SqlClient;
 
 namespace Replace.Common.Database
 {

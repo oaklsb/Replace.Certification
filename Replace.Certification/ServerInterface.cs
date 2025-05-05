@@ -156,6 +156,8 @@ namespace Replace.Certification
             var moduleName = packet.ReadAscii();
             var IP = packet.ReadAscii();
 
+            Logger.Info($"Certification request from {moduleName} [{IP}]");
+
             var cert = context_data.CertificationManager;
 
             Module reqModule = cert.ModuleList.Single(p => p.Name == moduleName);

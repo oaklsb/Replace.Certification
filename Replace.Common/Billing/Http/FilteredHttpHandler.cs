@@ -24,6 +24,9 @@ namespace Replace.Common.Billing.Http
             foreach (var whiteIP in _manager.Config.WhitelistIPs)
                 resolvedIPs.Add(IPAddress.Parse(whiteIP));
 
+            if (resolvedIPs.Contains(IPAddress.Any))
+                return true;
+
             if (resolvedIPs.Contains(clientIP) == false)
                 throw new AccessDeniedException(context, "Access to the resource was denied");
 
